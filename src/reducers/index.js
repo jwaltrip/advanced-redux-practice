@@ -16,11 +16,16 @@ function tickets(state = 0, action) {
   return state;
 }
 
+function orders(state = [], action) {
+  return state;
+}
+
 const rootReducer = combineReducers({
   newComments,
   newTasks,
   newOrders,
-  tickets
+  tickets,
+  orders
 });
 
 export default rootReducer;

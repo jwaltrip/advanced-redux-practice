@@ -47,7 +47,7 @@ function App(props) {
                 <TasksPanel tasks={props.tasks} />
               </div>
               <div className="col-lg-4">
-                <TransactionsPanel orders={props.orders} />
+                <TransactionsPanel />
               </div>
             </div>
           </div>

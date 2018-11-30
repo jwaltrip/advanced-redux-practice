@@ -10,7 +10,6 @@ import {Provider} from 'react-redux';
 
 const {
 dateTime,
-orders,
 taskItem,
 tasks,
 messages
@@ -21,7 +20,6 @@ ReactDOM.render(
     <App
       taskItem={taskItem}
       dateTime={dateTime}
-      orders={orders}
       messages={messages}
       tasks={tasks}
     />
