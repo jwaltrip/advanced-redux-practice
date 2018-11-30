@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import MessagePreview from "./MessagePreview";
 
@@ -67,6 +68,12 @@ function TopNav(props) {
     </ul>);
 }
 
+// propTypes for the prop that was connected from redux
+TopNav.propTypes = {
+  messages: PropTypes.array
+};
+
+// connect the redux state to this.props of this component
 const mapStateToProps = state => ({
   messages: state.messages
 });

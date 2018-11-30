@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 
 function Orders(props) {
@@ -27,9 +28,16 @@ function Orders(props) {
     </div>);
 }
 
+// propTypes for the prop that was connected from redux
+Orders.propTypes = {
+  orders: PropTypes.number
+};
+
+// connect the redux state to this.props of this component
 const mapStateToProps = state => ({
   orders: state.newOrders
 });
 
+// make a container component and connect the main component to redux store
 const OrdersContainer = connect(mapStateToProps)(Orders);
 export default OrdersContainer;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 
 function Tasks(props) {
@@ -26,10 +27,17 @@ function Tasks(props) {
         </div>);
 }
 
+// propTypes for the prop that was connected from redux
+Tasks.propTypes = {
+  tasks: PropTypes.number
+};
+
+// connect the redux state to this.props of this component
 const mapStateToProps = (state) => ({
   tasks: state.newTasks
 });
 
+// make a container component and connect the main component to redux store
 const TasksContainer = connect(mapStateToProps)(Tasks);
 export default TasksContainer;
 

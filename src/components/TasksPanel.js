@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import TaskItem from "./TaskItem";
 
@@ -23,9 +24,16 @@ function TasksPanel(props) {
         );
 }
 
+// propTypes for the prop that was connected from redux
+TasksPanel.propTypes = {
+  tasks: PropTypes.array
+};
+
+// connect the redux state to this.props of this component
 const mapStateToProps = state => ({
   tasks: state.tasks
 });
 
+// make a container component and connect the main component to redux store
 const TasksPanelContainer = connect(mapStateToProps)(TasksPanel);
 export default TasksPanelContainer;

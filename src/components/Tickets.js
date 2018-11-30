@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {connect} from "react-redux";
 
 function Tickets(props) {
@@ -27,10 +28,17 @@ function Tickets(props) {
     </div>);
 }
 
+// propTypes for the prop that was connected from redux
+Tickets.propTypes = {
+  tickets: PropTypes.number
+};
+
+// connect the redux state to this.props of this component
 const mapStateToProps = state => ({
   tickets: state.tickets
 });
 
+// make a container component and connect the main component to redux store
 const TicketsContainer = connect(mapStateToProps)(Tickets);
 export default TicketsContainer;
 

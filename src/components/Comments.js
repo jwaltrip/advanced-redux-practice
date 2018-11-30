@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from 'react-redux';
 
 function Comments(props) {
@@ -27,10 +28,17 @@ function Comments(props) {
     </div>);
 }
 
+// propTypes for the prop that was connected from redux
+Comments.propTypes = {
+  comments: PropTypes.number
+};
+
+// connect the redux state to this.props of this component
 const mapStateToProps = state => ({
   comments: state.newComments
 });
 
+// make a container component and connect the main component to redux store
 const CommentsContainer = connect(mapStateToProps)(Comments);
 export default CommentsContainer;
 

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import TransactionRow from "./TransactionRow";
 
@@ -36,9 +37,16 @@ function TransactionsPanel(props) {
     </div> );
 }
 
+// propTypes for the prop that was connected from redux
+TransactionsPanel.propTypes = {
+  orders: PropTypes.array
+};
+
+// connect the redux state to this.props of this component
 const mapStateToProps = state => ({
   orders: state.orders
 });
 
+// make a container component and connect the main component to redux store
 const TransactionPanelContainer = connect(mapStateToProps)(TransactionsPanel);
 export default TransactionPanelContainer;
