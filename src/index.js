@@ -21,7 +21,6 @@ ReactDOM.render(
       taskItem={taskItem}
       dateTime={dateTime}
       messages={messages}
-      tasks={tasks}
     />
   </Provider>,
   document.getElementById("root")

@@ -20,12 +20,17 @@ function orders(state = [], action) {
   return state;
 }
 
+function tasks(state = [], action) {
+  return state;
+}
+
 const rootReducer = combineReducers({
   newComments,
   newTasks,
   newOrders,
   tickets,
-  orders
+  orders,
+  tasks
 });
 
 export default rootReducer;
